@@ -1,5 +1,4 @@
 # TPojaghiWeb
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 Web application built around Flask.
 Latest deployed version: https://tpojaghi.onrender.com/
@@ -22,3 +21,11 @@ python -m venv env
 env\Scripts\activate
 pip install -r requirements.txt
 ```
+
+To start the web app, just run the following command within the same virtual env:
+
+```sh
+python app.py
+```
+
+The flask app should run locally through http://127.0.0.1:10000/
