@@ -1,8 +1,10 @@
 import os
+import argparse
 from flask import Flask, render_template, g, request, session, redirect, url_for, \
                          abort
 from flask_babel import Babel
 from urllib.parse import urlparse, urljoin
+from distutils.util import strtobool
 from data import ALBUMS
 
 app = Flask(__name__)
@@ -59,7 +61,11 @@ def contact():
     return render_template('contact.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=10000)
+    parser = argparse.ArgumentParser(description='TPojaghi WebApp')
+    parser.add_argument('-p', '--port', type=int, help='Optional port number for the Flask app', default=10000)
+    parser.add_argument('--dev', dest='dev', type=lambda x: bool(strtobool(x)), help='Running on Dev environment. True by default', default="True")
+    args = parser.parse_args()
+    app.run(debug=args.dev, host='0.0.0.0', port=args.port)
 
 
 # pybabel extract -F babel.cfg -o messages.pot .
