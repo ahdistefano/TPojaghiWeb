@@ -10,7 +10,6 @@ from data import ALBUMS
 app = Flask(__name__)
 babel = Babel(app)
 app.config['BABEL_DEFAULT_LOCALE'] = 'en'
-app.secret_key = os.environ.get('SECRET_KEY', '123456')
 
 ##############
 # Babel init #
@@ -64,8 +63,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='TPojaghi WebApp')
     parser.add_argument('-p', '--port', type=int, help='Optional port number for the Flask app', default=10000)
     parser.add_argument('--dev', dest='dev', type=lambda x: bool(strtobool(x)), help='Running on Dev environment. True by default', default="True")
+    parser.add_argument('--debug', dest='debug', type=lambda x: bool(strtobool(x)), help='Enable debug. True by default', default="True")
     args = parser.parse_args()
-    app.run(debug=args.dev, host='0.0.0.0', port=args.port)
+    app.secret_key = os.environ.get('SECRET_KEY') if not args.dev else os.environ.get('DEV_SECRET_KEY', '123456')
+    app.run(debug=args.debug, host='0.0.0.0', port=args.port)
 
 
 # pybabel extract -F babel.cfg -o messages.pot .
