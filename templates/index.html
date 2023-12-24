@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _('Home') }}{% endblock %}
+
+{% block content %}
+
+<!------------------>
+<section id="home">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="/static/index/1.jpg" class="img1" /></div>
+            <div class="swiper-slide"><img src="/static/index/2.jpg" class="img2"/></div>
+            <div class="swiper-slide"><img src="/static/index/3.jpg" class="img3"/></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</section>
+
+<!------------------>
+{% endblock %}

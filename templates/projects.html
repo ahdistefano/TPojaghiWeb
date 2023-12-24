@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _('Projects') }}{% endblock %}
+
+{% block content %}
+
+<!------------------>
+<script>
+    var albumsData = {{ albums | tojson }};
+</script>
+<section id="projects">
+
+    <div class="swiper mySwiperTop">
+        <div class="swiper-wrapper">
+            {% for album in albums %}
+            <!--<div class="swiper-slide"><img src="/static/projects/{{ album.cover }}"/></div>-->
+            <div class="swiper-slide bg-image" style="background-image: url('/static/projects/{{ album.cover }}');";>
+                <div class="blurry" style="backdrop-filter: blur(10px) brightness(60%); ">
+                    <div class="artist-table container text-center text-white p-4">
+                        <div class="row align-items-start">
+                            <div class="col">
+                                <img src="/static/projects/{{ album.cover }}" />
+                            </div>
+                            <div class="col">
+                                <div class="row"><p class="tag">{{_('Artist')}}: </p><p class="tag-text">{{ album.artist }}</p></div>
+                                <div class="row"><p class="tag">{{_('Title')}}: </p><p class="tag-text">{{ album.title }}</p></div>
+                                <div class="row"><p class="tag">{{_('Year')}}: </p><p class="tag-text">{{ album.year }}</p></div>
+                                <div class="row">
+                                    <ul class="list-group">
+                                        {% for role in album.roles %}
+                                        <li class="list-group-item">{{role}}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="swiper mySwiperBottom" thumbsSlider="">
+        <div class="swiper-wrapper">
+            {% for album in albums %}
+            <div class="swiper-slide"><img src="/static/projects/{{ album.cover }}" /></div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+</section>
+
+<!------------------>
+{% endblock %}
