@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, g, request, session, redirect, url_for, \
                          abort
 from flask_babel import Babel
@@ -7,7 +8,7 @@ from data import ALBUMS
 app = Flask(__name__)
 babel = Babel(app)
 app.config['BABEL_DEFAULT_LOCALE'] = 'en'
-app.secret_key = '123456'
+app.secret_key = os.environ.get('SECRET_KEY', '123456')
 
 ##############
 # Babel init #
