@@ -72,4 +72,5 @@ if __name__ == '__main__':
 # pybabel extract -F babel.cfg -o messages.pot .
 # pybabel init -i messages.pot -d translations -l es
 # pybabel update -i messages.pot -d translations
+## Editar messages.po a mano acá ##
 # pybabel compile -d translations

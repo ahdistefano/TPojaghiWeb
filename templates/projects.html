@@ -10,10 +10,10 @@
 </script>
 <section id="projects">
 
+    <!--
     <div class="swiper mySwiperTop">
         <div class="swiper-wrapper">
             {% for album in albums %}
-            <!--<div class="swiper-slide"><img src="/static/projects/{{ album.cover }}"/></div>-->
             <div class="swiper-slide bg-image" style="background-image: url('/static/projects/{{ album.cover }}');";>
                 <div class="blurry" style="backdrop-filter: blur(10px) brightness(60%); ">
                     <div class="artist-table container text-center text-white p-4">
@@ -49,6 +49,38 @@
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
+    </div>
+
+    -->
+
+    <!-- Main Swiper -->
+    <div class="swiper gallery-main">
+        <div class="swiper-wrapper">
+            {% for album in albums %}
+            <div class="swiper-slide">
+                <img class="blurry" style="filter: blur(10px) brightness(60%);" src="/static/projects/{{ album.cover }}"/>
+                <div class="photo-info">
+                    <p style="display: flex; align-items: center; justify-content: center;"><img style="width: 40vh; margin-left: auto; margin-right: auto;" src="/static/projects/{{ album.cover }}" /></p>
+                    <p><b>{{_('Artist')}}:</b> {{ album.artist }}</p>
+                    <p><b>{{_('Title')}}:</b> {{ album.title }}</p>
+                    <p><b>{{_('Year')}}:</b> {{ album.year }}</p>
+                    <p><b>{{_('Roles')}}:</b> {{ album.roles|join(', '|safe) }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Thumbnail Swiper -->
+    <div class="swiper gallery-thumbs">
+        <div class="swiper-wrapper">
+            {% for album in albums %}
+            <div class="swiper-slide"><img src="/static/projects/{{ album.cover }}" /></div>
+            {% endfor %}
+            <!-- ... -->
+        </div>
     </div>
 
 </section>

@@ -118,33 +118,6 @@ main {
     background: transparent;
 }
 
-.mySwiperTop {
-    width: 100%;
-    height: 70vh;
-    object-fit: cover;
-}
-
-.mySwiperBottom {
-    width: 100%;
-    height: auto;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.mySwiperTop .swiper-slide {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;    
-    position: relative;
-}
-
-.mySwiperBottom .swiper-slide img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
 /********************/
 
 footer {
@@ -168,18 +141,74 @@ footer {
     }
 }
 
-/**/
+/* Projects page */
 
-.artist-table {
-    background-color: rgba(0, 0, 0, 0.650);
+#projects {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
 }
 
-.tag {
-    font-size: 2rem;
-    text-decoration: underline;
-    text-align: left;
+#projects .gallery-main {
+    height: 70vh; /* You can adjust this as needed */
+    position: relative; /* For absolute positioning of the text */
 }
 
-.tag-text {
-    font-size: 1.60rem;
+#projects .gallery-main .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#projects .gallery-main .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Arrows */
+#projects .swiper-button-next,
+#projects .swiper-button-prev {
+    color: #fff;
+}
+
+/* Photo info text style */
+#projects .photo-info {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Thumbnails below */
+
+#projects .gallery-thumbs {
+    height: 20vh;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+#projects .gallery-thumbs .swiper-slide {
+    width: auto;
+    height: 100%;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+#projects .gallery-thumbs .swiper-slide-active {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+#projects .gallery-thumbs .swiper-slide img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
 }

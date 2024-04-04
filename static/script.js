@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Swiper.js integration
 document.addEventListener('DOMContentLoaded', () => {
-    var swiper;
     var currentPage = document.querySelector('section').id;
     if (currentPage === 'home') {
         swiper = new Swiper('.swiper', {
@@ -46,7 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         });
     } else if (currentPage === 'projects') {
-        var swiper2 = new Swiper(".mySwiperBottom", {
+
+        /*
+        var swiperThumbs = new Swiper(".mySwiperBottom", {
             loop: true,
             spaceBetween: 0,
             slidesPerView: 3,
@@ -71,14 +72,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 draggable: true,
             },
         });
-        var swiper = new Swiper(".mySwiperTop", {
+
+        var swiperTop = new Swiper(".mySwiperTop", {
             loop: true,
             slidesPerView: 1,
             freeMode: false,
             autoHeight: false,
             allowTouchMove: false,
             thumbs: {
-                swiper: swiper2,
+                swiper: swiperThumbs,
+            },
+        });
+        */
+
+        const swiperThumbs = new Swiper('.gallery-thumbs', {
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: 'auto',
+            freeMode: true,
+            watchSlidesProgress: true,
+            slideToClickedSlide: true,
+            mousewheel: true,
+            autoHeight: false,
+            clickable: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                draggable: true,
+            },
+        });
+
+        const swiperMain = new Swiper('.gallery-main', {
+            loop: true,
+            slidesPerView: 1,
+            freeMode: false,
+            allowTouchMove: false,
+            nested: true,
+            grabCursor: true,
+            thumbs: {
+                swiper: swiperThumbs,
             },
         });
     };
@@ -90,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('current-year').textContent = currentYear;
 });
 
+/*
 function showAlbumInfo(albumIndex) {
     var album = albumsData[albumIndex];
     var roles = "";
@@ -103,6 +139,7 @@ function showAlbumInfo(albumIndex) {
         '<h3>' + album.year + '</h3>' +
         '<p>Roles:</p>' + roles;
 }
+*/
 
 // Prevent img right-click
 //document.addEventListener('DOMContentLoaded', (event) => {

@@ -1,22 +1,46 @@
 # Spanish translations for PROJECT.
-# Copyright (C) 2023 ORGANIZATION
+# Copyright (C) 2024 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-12-17 21:07-0300\n"
-"PO-Revision-Date: 2023-12-17 17:47-0300\n"
+"POT-Creation-Date: 2024-04-04 01:15-0300\n"
+"PO-Revision-Date: 2024-04-04 01:15-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
 "Language-Team: es <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=latin-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.14.0\n"
+
+#: data.py:3
+msgid "Producer"
+msgstr ""
+
+#: data.py:4
+msgid "Mixing"
+msgstr ""
+
+#: data.py:5
+msgid "Recording"
+msgstr ""
+
+#: data.py:6
+msgid "Mastering"
+msgstr ""
+
+#: data.py:7
+msgid "Composer"
+msgstr ""
+
+#: data.py:8
+msgid "Player"
+msgstr ""
 
 #: env/Lib/site-packages/click/_termui_impl.py:518
 msgid "{editor}: Editing failed"
@@ -278,19 +302,19 @@ msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/base.html:16 templates/index.html:3
+#: templates/base.html:17 templates/index.html:3
 msgid "Home"
 msgstr "Inicio"
 
-#: templates/base.html:17 templates/projects.html:3 templates/projects.html:10
+#: templates/base.html:18 templates/projects.html:3
 msgid "Projects"
 msgstr "Proyectos"
 
-#: templates/base.html:18 templates/contact.html:3
+#: templates/base.html:19 templates/contact.html:3
 msgid "Contact"
 msgstr "Contacto"
 
-#: templates/base.html:35
+#: templates/base.html:37
 msgid "All rights reserved"
 msgstr "Todos los derechos reservados"
 
@@ -298,15 +322,19 @@ msgstr "Todos los derechos reservados"
 msgid "Contact and Social Media"
 msgstr "Contacto y Redes Sociales"
 
-#~ msgid "Current"
-#~ msgstr "Actuales"
+#: templates/projects.html:25 templates/projects.html:63
+msgid "Artist"
+msgstr "Artista"
 
-#~ msgid "Upcoming"
-#~ msgstr "Futuros"
+#: templates/projects.html:26 templates/projects.html:64
+msgid "Title"
+msgstr "Título"
 
-#~ msgid "Past"
-#~ msgstr "Pasados"
+#: templates/projects.html:27 templates/projects.html:65
+msgid "Year"
+msgstr "Año"
 
-#~ msgid "Current Works"
-#~ msgstr "Proyectos actuales"
+#: templates/projects.html:66
+msgid "Roles"
+msgstr "Roles"
 
